@@ -1,0 +1,134 @@
+variable "cluster_name" {
+  type        = string
+  default     = "osug-rke"
+  description = "Cluster name"
+}
+
+variable "server_ip_list" {
+  type        = list(string)
+  description = "A list of nodes IP"
+}
+
+variable "ipv4_netmask" {
+  type        = number
+  description = "The IPV4 subnet mask in bits (e.g. 24 for 255.255.255.0)"
+}
+
+variable "ipv4_gateway" {
+  type        = string
+  description = "The IPv4 default gateway"
+}
+
+variable "dns_server_list" {
+  type        = list(string)
+  description = " The list of DNS servers to configure on a virtual machine. "
+}
+
+variable "domain" {
+  type        = string
+  description = "A list of DNS search domains to add to the DNS configuration on the virtual machine"
+}
+
+variable "node_name" {
+  type        = string
+  description = "The Proxmox Node Name"
+}
+
+variable "use_random_nodes" {
+  type        = string
+  description = "Use random nodes for spawning VM"
+}
+
+variable "datastore" {
+  type        = string
+  description = "The Proxmox datastore id"
+}
+
+variable "snippets_datastore" {
+  type        = string
+  description = "The Proxmox datastore id for snippets (cloud-config files)"
+}
+
+variable "pool" {
+  type        = string
+  description = "The Proxmox resource pool name"
+}
+
+variable "server_tags" {
+  type        = list(string)
+  description = "A list of tags to add to server nodes"
+  default     = []
+}
+
+variable "network_bridge" {
+  type        = string
+  description = "The Proxmox network bridge"
+}
+
+variable "template_vm" {
+  type        = string
+  description = "The VM template"
+}
+
+variable "system_user" {
+  type        = string
+  default     = "ubuntu"
+  description = "Default OS image user"
+}
+
+variable "server_num_cpu" {
+  type        = number
+  description = "CPU count for master nodes"
+}
+
+variable "server_memory" {
+  type        = number
+  description = "Memory count for master nodes"
+}
+
+variable "server_disk_size" {
+  type        = number
+  description = "Master nodes disk size"
+}
+
+variable "disk_full_clone" {
+  type = bool
+  default = true
+  description = "Full clone disk"
+}
+
+variable "rke2_version" {
+  type        = string
+  default     = ""
+  description = "RKE2 version"
+}
+
+variable "rke2_config_file" {
+  type        = string
+  default     = ""
+  description = "RKE2 config file for servers"
+}
+
+variable "registries_conf" {
+  type        = string
+  default     = ""
+  description = "Containerd registries config in gz+b64"
+}
+
+variable "additional_san" {
+  type        = list(string)
+  default     = []
+  description = "RKE2 additional SAN"
+}
+
+variable "manifests_path" {
+  type        = string
+  default     = ""
+  description = "RKE2 addons manifests directory"
+}
+
+variable "manifests_gzb64" {
+  type        = map(string)
+  default     = {}
+  description = "RKE2 addons manifests in gz+b64 in the form { \"addon_name\": \"gzb64_manifests\" }"
+}

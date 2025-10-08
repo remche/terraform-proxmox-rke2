@@ -1,6 +1,7 @@
 resource "proxmox_virtual_environment_vm" "vm" {
   count     = length(var.ip_list)
   name      = "${var.name_prefix}-${format("%03d", count.index + 1)}"
+  tags      = var.tags
   node_name = var.node_name
   # resource_pool_id = var.pool_id
   # datastore_id     = var.datastore_id

@@ -38,6 +38,7 @@ module "server" {
   memory             = var.server_memory
   pool               = var.pool
   datastore          = var.datastore
+  tags               = var.server_tags
   snippets_datastore = var.snippets_datastore
   network_bridge     = var.network_bridge
   rke2_version       = var.rke2_version

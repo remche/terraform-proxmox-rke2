@@ -23,6 +23,7 @@ resource "random_password" "rke2_token" {
   length = 64
 }
 
+
 module "server" {
   source             = "./modules/node"
   cluster_name       = var.cluster_name
@@ -33,13 +34,13 @@ module "server" {
   dns_server_list    = var.dns_server_list
   domain             = var.domain
   template_vm        = var.template_vm
-  num_cpu            = var.server_num_cpu
+  num_cpu            = var.num_cpu
   disk_full_clone    = var.disk_full_clone
-  disk_size          = var.server_disk_size
-  memory             = var.server_memory
+  disk_size          = var.disk_size
+  memory             = var.memory
   pool               = var.pool
   datastore          = var.datastore
-  tags               = var.server_tags
+  tags               = var.tags
   snippets_datastore = var.snippets_datastore
   network_bridge     = var.network_bridge
   rke2_version       = var.rke2_version
@@ -50,5 +51,4 @@ module "server" {
   manifests_path     = var.manifests_path
   manifests_gzb64    = var.manifests_gzb64
   node_name          = var.node_name
-
 }

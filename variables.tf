@@ -55,7 +55,7 @@ variable "pool" {
   description = "The Proxmox resource pool name"
 }
 
-variable "server_tags" {
+variable "tags" {
   type        = list(string)
   description = "A list of tags to add to server nodes"
   default     = []
@@ -77,17 +77,17 @@ variable "system_user" {
   description = "Default OS image user"
 }
 
-variable "server_num_cpu" {
+variable "num_cpu" {
   type        = number
   description = "CPU count for master nodes"
 }
 
-variable "server_memory" {
+variable "memory" {
   type        = number
   description = "Memory count for master nodes"
 }
 
-variable "server_disk_size" {
+variable "disk_size" {
   type        = number
   description = "Master nodes disk size"
 }

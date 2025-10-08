@@ -66,6 +66,7 @@ variable "disk_size" {
 
 variable "disk_full_clone" {
   type = bool
+  default = false
 }
 
 variable "template_vm" {

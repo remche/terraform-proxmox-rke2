@@ -94,7 +94,7 @@ variable "server_disk_size" {
 
 variable "disk_full_clone" {
   type        = bool
-  default     = true
+  default     = false
   description = "Full clone disk"
 }
 

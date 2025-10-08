@@ -15,7 +15,7 @@ variable "snippets_datastore" {
 }
 
 variable "node_name" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -66,7 +66,7 @@ variable "disk_size" {
 }
 
 variable "disk_full_clone" {
-  type = bool
+  type    = bool
   default = false
 }
 

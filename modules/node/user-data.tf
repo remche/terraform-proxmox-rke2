@@ -2,11 +2,11 @@ resource "proxmox_virtual_environment_file" "meta_data_cloud_config" {
   count        = length(var.ip_list)
   content_type = "snippets"
   datastore_id = var.snippets_datastore
-  node_name = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
+  node_name    = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
 
   source_raw {
     data = templatefile(("${path.module}/files/metadata.yml.tpl"),
-      { hostname = "${var.name_prefix}-${format("%03d", count.index + 1)}"
+      { hostname    = "${var.name_prefix}-${format("%03d", count.index + 1)}"
         ip          = var.ip_list[count.index]
         ip_netmask  = var.ipv4_netmask
         gw          = var.ipv4_gateway
@@ -21,7 +21,7 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
   count        = length(var.ip_list)
   content_type = "snippets"
   datastore_id = var.snippets_datastore
-  node_name = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
+  node_name    = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
 
   source_raw {
     data = templatefile(("${path.module}/files/cloud-init.yml.tpl"),

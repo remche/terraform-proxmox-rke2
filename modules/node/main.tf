@@ -22,6 +22,8 @@ resource "proxmox_virtual_environment_vm" "vm" {
     enabled = true
   }
 
+  stop_on_destroy = true
+
   network_device {
     bridge = var.network_bridge
   }

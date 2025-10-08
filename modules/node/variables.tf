@@ -16,6 +16,7 @@ variable "snippets_datastore" {
 
 variable "node_name" {
   type = string
+  default = ""
 }
 
 variable "pool" {
@@ -70,6 +71,10 @@ variable "disk_full_clone" {
 }
 
 variable "template_vm" {
+  type = string
+}
+
+variable "template_vm_node" {
   type = string
 }
 

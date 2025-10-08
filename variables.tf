@@ -32,11 +32,7 @@ variable "domain" {
 variable "node_name" {
   type        = string
   description = "The Proxmox Node Name"
-}
-
-variable "use_random_nodes" {
-  type        = string
-  description = "Use random nodes for spawning VM"
+  default     = ""
 }
 
 variable "datastore" {
@@ -69,6 +65,11 @@ variable "network_bridge" {
 variable "template_vm" {
   type        = string
   description = "The VM template"
+}
+
+variable "template_vm_node" {
+  type        = string
+  description = "The VM template node"
 }
 
 variable "system_user" {

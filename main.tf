@@ -34,6 +34,7 @@ module "server" {
   dns_server_list    = var.dns_server_list
   domain             = var.domain
   template_vm        = var.template_vm
+  template_vm_node   = var.template_vm_node
   num_cpu            = var.num_cpu
   disk_full_clone    = var.disk_full_clone
   disk_size          = var.disk_size

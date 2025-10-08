@@ -1,8 +1,14 @@
+resource "random_integer" "random_nodes" {
+  min = 0
+  max = length(local.online_nodes) - 1
+  count = var.node_name == "" ? length(var.ip_list) : 0
+}
+
 resource "proxmox_virtual_environment_vm" "vm" {
   count     = length(var.ip_list)
   name      = "${var.name_prefix}-${format("%03d", count.index + 1)}"
   tags      = var.tags
-  node_name = var.node_name
+  node_name = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
   pool_id   = var.pool 
 
   cpu {
@@ -31,6 +37,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   clone {
     vm_id = var.template_vm
+    node_name = var.template_vm_node
     full  = var.disk_full_clone
   }
 

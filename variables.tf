@@ -51,6 +51,7 @@ variable "snippets_datastore" {
 
 variable "pool" {
   type        = string
+  default     = ""
   description = "The Proxmox resource pool name"
 }
 
@@ -92,8 +93,8 @@ variable "server_disk_size" {
 }
 
 variable "disk_full_clone" {
-  type = bool
-  default = true
+  type        = bool
+  default     = true
   description = "Full clone disk"
 }
 

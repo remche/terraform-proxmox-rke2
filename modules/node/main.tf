@@ -3,12 +3,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   name      = "${var.name_prefix}-${format("%03d", count.index + 1)}"
   tags      = var.tags
   node_name = var.node_name
-  # resource_pool_id = var.pool_id
-  # datastore_id     = var.datastore_id
-  # folder           = var.folder
-  # num_cpus         = var.num_cpu
-  # memory           = var.memory
-  # guest_id         = var.guest_id
+  pool_id   = var.pool 
 
   cpu {
     cores = var.num_cpu
@@ -28,16 +23,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
     bridge = var.network_bridge
   }
 
-  # disk {
-  #   label = "disk0"
-  #   size  = var.disk_size
-  # }
-  #
-
   disk {
     datastore_id = var.datastore
-    interface = "scsi0"
-    size = var.disk_size
+    interface    = "scsi0"
+    size         = var.disk_size
   }
 
   clone {
@@ -48,7 +37,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   initialization {
     datastore_id = var.datastore
     dns {
-      domain = var.domain
+      domain  = var.domain
       servers = var.dns_server_list
     }
     ip_config {

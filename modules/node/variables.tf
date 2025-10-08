@@ -19,12 +19,13 @@ variable "node_name" {
 }
 
 variable "pool" {
-  type = string
+  type    = string
+  default = ""
 }
 
 variable "tags" {
-  type        = list(string)
-  default     = []
+  type    = list(string)
+  default = []
 }
 
 variable "ip_list" {

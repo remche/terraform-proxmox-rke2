@@ -21,7 +21,7 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
   count        = length(var.ip_list)
   content_type = "snippets"
   datastore_id = var.snippets_datastore
-  node_name    = "osug-proxmox-2"
+  node_name    = var.node_name
 
   source_raw {
     data = templatefile(("${path.module}/files/cloud-init.yml.tpl"),

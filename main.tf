@@ -1,17 +1,18 @@
 locals {
   node_config = {
-    bootstrap_server = var.server_ip_list[0]
-    cluster_name     = var.cluster_name
-    datastore_id     = var.datastore
-    dns_server_list  = var.dns_server_list
-    domain           = var.domain
-    ipv4_gateway     = var.ipv4_gateway
-    ipv4_netmask     = var.ipv4_netmask
-    network_bridge   = var.network_bridge
-    pool             = var.pool
-    rke2_version     = var.rke2_version
-    rke2_token       = random_password.rke2_token.result
-    registries_conf  = var.registries_conf
+    bootstrap_server   = var.server_ip_list[0]
+    cluster_name       = var.cluster_name
+    datastore          = var.datastore
+    snippets_datastore = var.snippets_datastore
+    dns_server_list    = var.dns_server_list
+    domain             = var.domain
+    ipv4_gateway       = var.ipv4_gateway
+    ipv4_netmask       = var.ipv4_netmask
+    network_bridge     = var.network_bridge
+    pool               = var.pool
+    rke2_version       = var.rke2_version
+    rke2_token         = random_password.rke2_token.result
+    registries_conf    = var.registries_conf
   }
   ssh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
   scp = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"

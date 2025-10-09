@@ -43,6 +43,7 @@ module "server" {
   datastore          = var.datastore
   tags               = var.tags
   snippets_datastore = var.snippets_datastore
+  ha                 = var.ha
   network_bridge     = var.network_bridge
   rke2_version       = var.rke2_version
   rke2_config_file   = var.rke2_config_file

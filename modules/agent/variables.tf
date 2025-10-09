@@ -26,6 +26,11 @@ variable "tags" {
   default = []
 }
 
+variable "ha" {
+  type    = bool
+  default = false
+}
+
 variable "name_prefix" {
   type = string
 }

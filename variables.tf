@@ -53,8 +53,14 @@ variable "pool" {
 
 variable "tags" {
   type        = list(string)
-  description = "A list of tags to add to server nodes"
+  description = "A list of tags to add to nodes"
   default     = []
+}
+
+variable "ha" {
+  type        = bool
+  description = "Setup HA for this nodes"
+  default     = false
 }
 
 variable "network_bridge" {

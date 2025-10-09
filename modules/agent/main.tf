@@ -21,6 +21,7 @@ module "agent" {
   num_cpu            = var.num_cpu
   pool               = var.node_config.pool
   tags               = var.tags
+  ha                 = var.ha
   rke2_version       = var.node_config.rke2_version
   rke2_config_file   = var.rke2_config_file
   registries_conf    = var.node_config.registries_conf

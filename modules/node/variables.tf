@@ -29,6 +29,11 @@ variable "tags" {
   default = []
 }
 
+variable "ha" {
+  type    = bool
+  default = false
+}
+
 variable "ip_list" {
   type = list(string)
 }

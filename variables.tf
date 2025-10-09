@@ -84,7 +84,13 @@ variable "system_user" {
   description = "Default OS image user"
 }
 
-variable "num_cpu" {
+variable "cpu_type" {
+  type        = string
+  description = "CPU type"
+  default     = "x86-64-v2-AES"
+}
+
+variable "cpu_cores" {
   type        = number
   description = "CPU count for master nodes"
 }

@@ -18,7 +18,8 @@ module "agent" {
   memory             = var.memory
   name_prefix        = "${var.node_config.cluster_name}-${var.name_prefix}"
   network_bridge     = var.node_config.network_bridge
-  num_cpu            = var.num_cpu
+  cpu_cores          = var.cpu_cores
+  cpu_type           = var.node_config.cpu_type
   pool               = var.node_config.pool
   tags               = var.tags
   ha                 = var.ha

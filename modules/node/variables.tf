@@ -58,8 +58,12 @@ variable "domain" {
   type = string
 }
 
-variable "num_cpu" {
+variable "cpu_cores" {
   type = number
+}
+
+variable "cpu_type" {
+  type = string
 }
 
 variable "memory" {

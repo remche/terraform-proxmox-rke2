@@ -17,7 +17,9 @@ resource "proxmox_virtual_environment_vm" "vm" {
   pool_id   = var.pool
 
   cpu {
-    cores = var.num_cpu
+    cores = var.cpu_cores
+    numa  = true
+    type  = var.cpu_type
   }
 
   memory {

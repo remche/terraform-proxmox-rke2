@@ -2,6 +2,7 @@ variable "node_config" {
   type = object({
     bootstrap_server   = string
     cluster_name       = string
+    cpu_type           = string
     datastore          = string
     snippets_datastore = string
     dns_server_list    = list(string)
@@ -35,7 +36,7 @@ variable "name_prefix" {
   type = string
 }
 
-variable "num_cpu" {
+variable "cpu_cores" {
   type = number
 }
 

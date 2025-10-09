@@ -3,6 +3,7 @@ locals {
     bootstrap_server   = var.server_ip_list[0]
     cluster_name       = var.cluster_name
     datastore          = var.datastore
+    cpu_type           = var.cpu_type
     snippets_datastore = var.snippets_datastore
     dns_server_list    = var.dns_server_list
     domain             = var.domain
@@ -35,7 +36,8 @@ module "server" {
   domain             = var.domain
   template_vm        = var.template_vm
   template_vm_node   = var.template_vm_node
-  num_cpu            = var.num_cpu
+  cpu_cores          = var.cpu_cores
+  cpu_type           = var.cpu_type
   disk_full_clone    = var.disk_full_clone
   disk_size          = var.disk_size
   memory             = var.memory

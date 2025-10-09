@@ -5,8 +5,6 @@ users:
     groups:
       - sudo
     shell: /bin/bash
-    ssh_authorized_keys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAgSFElSJpzGubKOHshlIVJJQ2723zlaJTTLWBIp1S5R remche@peaky"
 write_files:
 - path: /usr/local/bin/wait-for-node-ready.sh
   permissions: "0755"

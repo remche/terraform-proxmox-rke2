@@ -34,6 +34,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
     bridge = var.network_bridge
   }
 
+  tpm_state {
+    datastore_id = var.datastore
+  }
+
   disk {
     datastore_id = var.datastore
     interface    = "scsi0"
@@ -61,10 +65,4 @@ resource "proxmox_virtual_environment_vm" "vm" {
     meta_data_file_id = proxmox_virtual_environment_file.meta_data_cloud_config[count.index].id
     user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config[count.index].id
   }
-
-  # lifecycle {
-  #   ignore_changes = [
-  #     extra_config
-  #   ]
-  # }
 }

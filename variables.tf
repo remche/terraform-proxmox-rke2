@@ -146,3 +146,9 @@ variable "manifests_gzb64" {
   default     = {}
   description = "RKE2 addons manifests in gz+b64 in the form { \"addon_name\": \"gzb64_manifests\" }"
 }
+
+variable "write_kubeconfig" {
+  type        = bool
+  default     = false
+  description = "Write kubeconfig. Use ssh-agent. Needs to be able to SSH to the nodes"
+}

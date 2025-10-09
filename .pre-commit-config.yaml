@@ -15,3 +15,7 @@ repos:
     - id: tfupdate
       args:
         - --args=provider bpg/proxmox
+    - id: terraform_docs
+      args:
+        - --hook-config=--path-to-file=USAGE.md        # Valid UNIX path. I.e. ../TFDOC.md or docs/README.md etc.
+        - --hook-config=--create-file-if-not-exist=true # Boolean. true or false

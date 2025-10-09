@@ -15,9 +15,9 @@ locals {
     rke2_token         = random_password.rke2_token.result
     registries_conf    = var.registries_conf
   }
-  ssh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-  scp = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-  #remote_rke2_yaml = "${var.system_user}@${module.server.floating_ip[0]}:/etc/rancher/rke2/rke2-remote.yaml"
+  ssh              = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+  scp              = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+  remote_rke2_yaml = "${var.system_user}@${var.server_ip_list[0]}:/etc/rancher/rke2/rke2-remote.yaml"
 }
 
 resource "random_password" "rke2_token" {

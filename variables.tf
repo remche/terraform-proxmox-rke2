@@ -7,6 +7,17 @@ variable "cluster_name" {
 variable "server_ip_list" {
   type        = list(string)
   description = "A list of nodes IP"
+  default     = []
+}
+
+variable "nodes_count" {
+  type        = number
+  default     = 0
+  description = "Number of nodes. Conflicts with server_ip_list."
+  validation {
+    condition     = provider::logic::xor(length(var.server_ip_list) == 0, var.nodes_count == 0)
+    error_message = "You must set one and only one of `first` or `second`."
+  }
 }
 
 variable "ipv4_netmask" {

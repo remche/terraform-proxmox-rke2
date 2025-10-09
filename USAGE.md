@@ -5,6 +5,7 @@
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_logic"></a> [logic](#requirement\_logic) | 0.1.6 |
 | <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | 0.84.1 |
 
 ## Providers
@@ -48,11 +49,12 @@
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory count for master nodes | `number` | n/a | yes |
 | <a name="input_network_bridge"></a> [network\_bridge](#input\_network\_bridge) | The Proxmox network bridge | `string` | n/a | yes |
 | <a name="input_node_name"></a> [node\_name](#input\_node\_name) | The Proxmox Node Name | `string` | `""` | no |
+| <a name="input_nodes_count"></a> [nodes\_count](#input\_nodes\_count) | Number of nodes. Conflicts with server\_ip\_list. | `number` | `0` | no |
 | <a name="input_pool"></a> [pool](#input\_pool) | The Proxmox resource pool name | `string` | `""` | no |
 | <a name="input_registries_conf"></a> [registries\_conf](#input\_registries\_conf) | Containerd registries config in gz+b64 | `string` | `""` | no |
 | <a name="input_rke2_config_file"></a> [rke2\_config\_file](#input\_rke2\_config\_file) | RKE2 config file for servers | `string` | `""` | no |
 | <a name="input_rke2_version"></a> [rke2\_version](#input\_rke2\_version) | RKE2 version | `string` | `""` | no |
-| <a name="input_server_ip_list"></a> [server\_ip\_list](#input\_server\_ip\_list) | A list of nodes IP | `list(string)` | n/a | yes |
+| <a name="input_server_ip_list"></a> [server\_ip\_list](#input\_server\_ip\_list) | A list of nodes IP | `list(string)` | `[]` | no |
 | <a name="input_snippets_datastore"></a> [snippets\_datastore](#input\_snippets\_datastore) | The Proxmox datastore id for snippets (cloud-config files) | `string` | n/a | yes |
 | <a name="input_system_user"></a> [system\_user](#input\_system\_user) | Default OS image user | `string` | `"ubuntu"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A list of tags to add to nodes | `list(string)` | `[]` | no |

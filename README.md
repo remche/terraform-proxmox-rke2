@@ -33,13 +33,13 @@ Upgrade by setting the target version via `rke2_version` and `do_upgrade = true`
 
 Set the `manifests_path` variable to point out the directory containing your [manifests and HelmChart](https://docs.rke2.io/helm.html#automatically-deploying-manifests-and-helm-charts) (see [JupyterHub example](./examples/jupyterhub/)).
 
-If you need a template step for your manifests, you can use `manifests_gzb64` (see [cinder-csi-plugin example](./examples/cinder-csi-plugin)).
+If you need a template step for your manifests, you can use `manifests_gzb64`.
 
 > [!WARNING]
 > Modifications made to manifests after cluster deployement wont have any effect.
 
 ### Additional server config files
-Set the `additional_configs_path` variable to the directory containing your additional rke2 server configs. (see the [Audit Policy example](./examples/audit-policy/))
+Set the `additional_configs_path` variable to the directory containing your additional rke2 server configs.
 
 If you need a template step for your config files, you can use `additional_configs_gzb64`.
 

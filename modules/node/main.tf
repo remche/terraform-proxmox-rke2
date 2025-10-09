@@ -30,6 +30,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
     enabled = true
   }
 
+  migrate         = true
   stop_on_destroy = true
 
   network_device {

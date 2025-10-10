@@ -37,6 +37,24 @@ variable "node_name" {
   default     = ""
 }
 
+variable "random_vm_ids" {
+  type        = bool
+  description = "Use random VM ids"
+  default     = true
+}
+
+variable "random_vm_id_start" {
+  type        = number
+  description = "The start of the range for random VM IDs"
+  default     = 99000
+}
+
+variable "random_vm_id_end" {
+  type        = number
+  description = "The end of the range for random VM IDs"
+  default     = 99990
+}
+
 variable "datastore" {
   type        = string
   description = "The Proxmox datastore id"

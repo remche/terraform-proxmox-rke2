@@ -14,6 +14,10 @@ locals {
     rke2_version       = var.rke2_version
     rke2_token         = random_password.rke2_token.result
     registries_conf    = var.registries_conf
+    random_vm_ids      = var.random_vm_ids
+    random_vm_id_start = var.random_vm_id_start
+    random_vm_id_end   = var.random_vm_id_end
+
   }
   ssh              = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
   scp              = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
@@ -55,4 +59,7 @@ module "server" {
   manifests_path     = var.manifests_path
   manifests_gzb64    = var.manifests_gzb64
   node_name          = var.node_name
+  random_vm_ids      = var.random_vm_ids
+  random_vm_id_start = var.random_vm_id_start
+  random_vm_id_end   = var.random_vm_id_end
 }

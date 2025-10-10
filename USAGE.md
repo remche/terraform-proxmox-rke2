@@ -49,6 +49,9 @@
 | <a name="input_network_bridge"></a> [network\_bridge](#input\_network\_bridge) | The Proxmox network bridge | `string` | `"vmbr0"` | no |
 | <a name="input_node_name"></a> [node\_name](#input\_node\_name) | The Proxmox Node Name | `string` | `""` | no |
 | <a name="input_pool"></a> [pool](#input\_pool) | The Proxmox resource pool name | `string` | `""` | no |
+| <a name="input_random_vm_id_end"></a> [random\_vm\_id\_end](#input\_random\_vm\_id\_end) | The end of the range for random VM IDs | `number` | `99990` | no |
+| <a name="input_random_vm_id_start"></a> [random\_vm\_id\_start](#input\_random\_vm\_id\_start) | The start of the range for random VM IDs | `number` | `99000` | no |
+| <a name="input_random_vm_ids"></a> [random\_vm\_ids](#input\_random\_vm\_ids) | Use random VM ids | `bool` | `true` | no |
 | <a name="input_registries_conf"></a> [registries\_conf](#input\_registries\_conf) | Containerd registries config in gz+b64 | `string` | `""` | no |
 | <a name="input_rke2_config_file"></a> [rke2\_config\_file](#input\_rke2\_config\_file) | RKE2 config file for servers | `string` | `""` | no |
 | <a name="input_rke2_version"></a> [rke2\_version](#input\_rke2\_version) | RKE2 version | `string` | `""` | no |

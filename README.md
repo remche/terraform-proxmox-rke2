@@ -20,6 +20,10 @@
 
 See [USAGE.md](USAGE.md) for all available options.
 
+### VM IDs
+
+To avoid [race condition](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#vm-and-container-id-assignment) when creating vm, the module uses random VM IDs. You can disable this features via `random_vm_ids` variable or set the VM IDs range via `random_vm_ids_start` and `random_vm_ids_end` variables.
+
 ### Kubernetes version
 
 You can specify rke2 version with `rke2_version` variables. Refer to RKE2 supported version.

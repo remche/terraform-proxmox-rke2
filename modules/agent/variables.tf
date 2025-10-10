@@ -14,6 +14,10 @@ variable "node_config" {
     rke2_version       = string
     rke2_token         = string
     registries_conf    = string
+    random_vm_ids      = bool
+    random_vm_id_start = number
+    random_vm_id_end   = number
+
   })
 }
 

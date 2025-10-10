@@ -6,6 +6,18 @@ variable "name_prefix" {
   type = string
 }
 
+variable "random_vm_ids" {
+  type = bool
+}
+
+variable "random_vm_id_start" {
+  type = number
+}
+
+variable "random_vm_id_end" {
+  type = number
+}
+
 variable "datastore" {
   type = string
 }

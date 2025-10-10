@@ -27,4 +27,7 @@ module "agent" {
   rke2_config_file   = var.rke2_config_file
   registries_conf    = var.node_config.registries_conf
   rke2_token         = var.node_config.rke2_token
+  random_vm_ids      = var.node_config.random_vm_ids
+  random_vm_id_start = var.node_config.random_vm_id_start
+  random_vm_id_end   = var.node_config.random_vm_id_end
 }

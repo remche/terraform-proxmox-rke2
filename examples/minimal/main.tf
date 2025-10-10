@@ -1,6 +1,5 @@
 module "controlplane" {
-  source = "./../.."
-  # source           = "remche/rke2/proxmox"
+  source           = "remche/rke2/proxmox"
   cluster_name     = var.cluster_name
   write_kubeconfig = true
   template_vm      = var.template_vm

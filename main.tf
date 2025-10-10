@@ -19,7 +19,6 @@ locals {
     random_vm_id_end   = var.random_vm_id_end
 
   }
-  ssh              = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
   scp              = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
   remote_rke2_yaml = "${var.system_user}@${var.server_ip_list[0]}:/etc/rancher/rke2/rke2-remote.yaml"
 }

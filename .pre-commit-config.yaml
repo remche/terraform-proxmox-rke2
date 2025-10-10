@@ -14,8 +14,18 @@ repos:
     - id: terraform_docs
     - id: tfupdate
       args:
+        - --args=terraform
+    - id: tfupdate
+      args:
         - --args=provider bpg/proxmox
+    - id: tfupdate
+      args:
+        - --args=provider hashicorp/null
+    - id: tfupdate
+      args:
+        - --args=provider hashicorp/random
     - id: terraform_docs
       args:
         - --hook-config=--path-to-file=USAGE.md        # Valid UNIX path. I.e. ../TFDOC.md or docs/README.md etc.
         - --hook-config=--create-file-if-not-exist=true # Boolean. true or false
+    - id: terraform_tflint

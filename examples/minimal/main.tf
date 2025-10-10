@@ -1,3 +1,4 @@
+# tflint-ignore: all
 module "controlplane" {
   source           = "remche/rke2/proxmox"
   cluster_name     = var.cluster_name

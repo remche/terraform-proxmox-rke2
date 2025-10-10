@@ -1,4 +1,3 @@
-<!-- BEGIN_TF_DOCS -->
 # terraform-proxmox-rke2
 
 Deploy Kubernetes on Proxmox with RKE2
@@ -73,4 +72,3 @@ Deploy Kubernetes on Proxmox with RKE2
 | Name | Description |
 |------|-------------|
 | <a name="output_node_config"></a> [node\_config](#output\_node\_config) | Nodes config |
-<!-- END_TF_DOCS -->

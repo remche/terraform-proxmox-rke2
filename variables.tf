@@ -22,11 +22,13 @@ variable "ipv4_gateway" {
 variable "dns_server_list" {
   type        = list(string)
   description = " The list of DNS servers to configure on a virtual machine. "
+  default     = ["9.9.9.9"]
 }
 
 variable "domain" {
   type        = string
   description = "A list of DNS search domains to add to the DNS configuration on the virtual machine"
+  default     = "domain.local"
 }
 
 variable "node_name" {
@@ -38,11 +40,13 @@ variable "node_name" {
 variable "datastore" {
   type        = string
   description = "The Proxmox datastore id"
+  default     = "local-lvm"
 }
 
 variable "snippets_datastore" {
   type        = string
   description = "The Proxmox datastore id for snippets (cloud-config files)"
+  default     = "local"
 }
 
 variable "pool" {
@@ -66,6 +70,7 @@ variable "ha" {
 variable "network_bridge" {
   type        = string
   description = "The Proxmox network bridge"
+  default     = "vmbr0"
 }
 
 variable "template_vm" {
@@ -75,7 +80,8 @@ variable "template_vm" {
 
 variable "template_vm_node" {
   type        = string
-  description = "The VM template node"
+  description = "The VM template node. Will default to `node_name` is not specified."
+  default     = ""
 }
 
 variable "system_user" {
@@ -93,16 +99,19 @@ variable "cpu_type" {
 variable "cpu_cores" {
   type        = number
   description = "CPU count for master nodes"
+  default     = 2
 }
 
 variable "memory" {
   type        = number
   description = "Memory count for master nodes"
+  default     = 2048
 }
 
 variable "disk_size" {
   type        = number
-  description = "Master nodes disk size"
+  description = "Nodes disk size."
+  default     = 35
 }
 
 variable "disk_full_clone" {

@@ -49,7 +49,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   clone {
     vm_id     = var.template_vm
-    node_name = var.template_vm_node
+    node_name = var.template_vm_node != "" ? var.template_vm_node : var.node_name
     full      = var.disk_full_clone
   }
 

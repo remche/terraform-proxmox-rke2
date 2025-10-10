@@ -1,3 +1,9 @@
+/**
+ * # terraform-proxmox-rke2
+ *
+ * Deploy Kubernetes on Proxmox with RKE2
+ */
+
 locals {
   node_config = {
     bootstrap_server   = var.server_ip_list[0]

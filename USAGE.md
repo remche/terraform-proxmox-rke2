@@ -1,6 +1,8 @@
+<!-- BEGIN_TF_DOCS -->
 # terraform-proxmox-rke2
 
-<!-- BEGIN_TF_DOCS -->
+Deploy Kubernetes on Proxmox with RKE2
+
 ## Requirements
 
 | Name | Version |

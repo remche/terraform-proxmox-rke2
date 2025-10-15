@@ -7,7 +7,7 @@
 ## Prerequisites
 
 - [Terraform](https://www.terraform.io/) or [OpenTofu](https://opentofu.org/)
-- [Proxmox](https://www.proxmox.com/) environment properly sourced. See [bpg/proxmox](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#environment-variables-summary) for details.
+- [Proxmox](https://www.proxmox.com/) environment properly sourced. See [bpg/proxmox](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#environment-variables-summary) for details, especially the [SSH Connection](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#ssh-connection) section as this module relies on snippets for *cloud-init* data.
 - A VM image fullfiling [RKE2 requirements](https://docs.rke2.io/install/requirements/) and featuring curl
 
 ## Features

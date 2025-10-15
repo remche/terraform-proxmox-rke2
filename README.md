@@ -20,6 +20,49 @@
 
 See [USAGE.md](USAGE.md) for all available options.
 
+### How-to
+
+Define controlplane and as many worker pools as you want. Example below configures a control plane with three servers and a single worker pool with three servers.
+
+```hcl
+module "controlplane" {
+  source             = "./.."
+  cluster_name       = mycluster
+  template_vm        = "118"
+  template_vm_node   = "proxmox-node"
+  pool               = "pool-osug"
+  datastore          = "vm-datastore"
+  snippets_datastore = "cephfs-iso"
+  ipv4_netmask       = 24
+  ipv4_gateway       = "10.42.0.1"
+  dns_server_list    = ["9.9.9.9"]
+  domain             = "mydomain.local"
+  server_ip_list     = ["10.0.42.2", "10.0.42.3", "10.0.42.4"]
+  cpu_cores            = 2
+  memory             = 4096
+  disk_size          = 48
+  network_bridge     = "vmbr0"
+  tags               = [var.cluster_name, "kubernetes", "server"]
+  ha                 = true
+  write_kubeconfig   = true
+  random_vm_id_start = 99000
+}
+
+module "worker_nodes" {
+  source           = "./..//modules/agent"
+  template_vm      = "118"
+  template_vm_node = "proxmox_node"
+  name_prefix      = "worker"
+  ip_list          = ["10.0.42.5", "10.0.42.6", "10.0.42.7"]
+  cpu_cores        = 2
+  memory           = 2048
+  disk_size        = 64
+  tags             = [var.cluster_name, "kubernetes", "worker"]
+  # Required to pass controlplane config to worker pools
+  node_config      = module.controlplane.node_config
+}
+```
+
 ### VM IDs
 
 To avoid [race condition](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#vm-and-container-id-assignment) when creating vm, the module uses random VM IDs. You can disable this features via `random_vm_ids` variable or set the VM IDs range via `random_vm_ids_start` and `random_vm_ids_end` variables.

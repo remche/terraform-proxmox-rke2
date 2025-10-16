@@ -63,6 +63,10 @@ module "worker_nodes" {
 }
 ```
 
+### Proxmox nodes
+
+If you don't specify Proxmox nodes, the module will spread the VM randomly on all available nodes.
+
 ### VM IDs
 
 To avoid [race condition](https://registry.terraform.io/providers/bpg/proxmox/latest/docs#vm-and-container-id-assignment) when creating vm, the module uses random VM IDs. You can disable this features via `random_vm_ids` variable or set the VM IDs range via `random_vm_ids_start` and `random_vm_ids_end` variables.

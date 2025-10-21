@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "bpg/proxmox"
-      version = "0.84.1"
+      version = "0.85.1"
     }
     null = {
       source  = "hashicorp/null"
@@ -13,7 +13,7 @@ terraform {
       version = "3.7.2"
     }
   }
-  required_version = "1.13.3"
+  required_version = "1.10.6"
 }
 
 provider "proxmox" {

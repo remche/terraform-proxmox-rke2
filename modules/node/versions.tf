@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "bpg/proxmox"
-      version = "0.85.1"
+      version = "0.86.0"
     }
     random = {
       source  = "hashicorp/random"
@@ -10,7 +10,7 @@ terraform {
     }
 
   }
-  required_version = "1.13.3"
+  required_version = "1.13.4"
 }
 
 provider "proxmox" {

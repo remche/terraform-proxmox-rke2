@@ -4,7 +4,7 @@ resource "random_integer" "random_nodes" {
   count = var.node_name == "" ? length(var.ip_list) : 0
 }
 
-resource "proxmox_virtual_environment_haresource" "ha" {
+resource "proxmox_haresource" "ha" {
   count       = var.ha ? length(var.ip_list) : 0
   resource_id = "vm:${proxmox_virtual_environment_vm.vm[count.index].vm_id}"
 }

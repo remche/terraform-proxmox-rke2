@@ -13,7 +13,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   count     = length(var.ip_list)
   name      = "${var.name_prefix}-${format("%03d", count.index + 1)}"
   tags      = var.tags
-  node_name = var.node_name == "" ? local.online_nodes[count.index] : var.node_name
+  node_name = var.node_name == "" ? local.online_nodes[random_integer.random_nodes] : var.node_name
   pool_id   = var.pool
 
   cpu {

@@ -92,7 +92,7 @@ variable "network_bridge" {
 }
 
 variable "template_vm" {
-  type        = string
+  type        = number
   description = "The VM template"
 }
 

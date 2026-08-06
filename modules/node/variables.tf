@@ -46,6 +46,11 @@ variable "ha" {
   default = false
 }
 
+variable "resource_affinity" {
+  type    = string
+  default = "ignore"
+}
+
 variable "ip_list" {
   type = list(string)
 }

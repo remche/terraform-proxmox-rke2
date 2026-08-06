@@ -19,6 +19,16 @@ variable "ipv4_gateway" {
   description = "The IPv4 default gateway"
 }
 
+variable "resource_affinity" {
+  type        = string
+  description = "Resource affinity for nodes pool"
+  default     = "ignore"
+  validation {
+    condition     = contains(["positive", "negative", "ignore"], var.resource_affinity)
+    error_message = "The value must be one of: positive, negative"
+  }
+}
+
 variable "dns_server_list" {
   type        = list(string)
   description = " The list of DNS servers to configure on a virtual machine. "

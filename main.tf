@@ -55,6 +55,7 @@ module "server" {
   tags               = var.tags
   snippets_datastore = var.snippets_datastore
   ha                 = var.ha
+  resource_affinity  = var.resource_affinity
   network_bridge     = var.network_bridge
   rke2_version       = var.rke2_version
   rke2_config_file   = var.rke2_config_file

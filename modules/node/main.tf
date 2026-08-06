@@ -9,6 +9,16 @@ resource "proxmox_haresource" "ha" {
   resource_id = "vm:${proxmox_virtual_environment_vm.vm[count.index].vm_id}"
 }
 
+resource "proxmox_harule" "harule" {
+  count = var.resource_affinity != "ignore" ? 1 : 0
+  rule  = "terraform-proxmox-rule"
+  type  = "resource-affinity"
+  resources = [
+    for _, vm in proxmox_virtual_environment_vm.vm : "vm:${vm.vm_id}"
+  ]
+  affinity = var.resource_affinity
+}
+
 resource "proxmox_virtual_environment_vm" "vm" {
   count     = length(var.ip_list)
   name      = "${var.name_prefix}-${format("%03d", count.index + 1)}"

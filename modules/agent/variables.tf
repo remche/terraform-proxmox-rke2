@@ -36,6 +36,11 @@ variable "ha" {
   default = false
 }
 
+variable "resource_affinity" {
+  type    = string
+  default = "ignore"
+}
+
 variable "name_prefix" {
   type = string
 }
